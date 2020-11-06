@@ -1,0 +1,21 @@
+version: '3.8'
+
+services: 
+    demo-gradle:
+        image: demo-gradle
+        container_name: demo-spring-boot-gradle
+        build: 
+            context: demo-spring-boot-gradle
+        volumes: 
+            - ./report-gradle:/root/report/
+        ports:
+            - "9000:8080"
+    demo-maven:
+        image: demo-maven
+        container_name: demo-spring-boot-maven
+        build: 
+            context: demo-spring-boot-maven
+        volumes: 
+            - ./report-maven:/root/report/
+        ports:
+            - "9001:8080"
